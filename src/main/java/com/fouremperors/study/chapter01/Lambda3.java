@@ -17,6 +17,7 @@ public class Lambda3 {
 
         String[] names=new String[]{"KeithFu","ZenYou","123456789","Pumpkin"};
 
+        //Comparator中添加的静态方法,方便我们进行了比较操作
         Arrays.sort(names,Comparator.comparing(String::length));
 
         System.out.println(Arrays.toString(names));
