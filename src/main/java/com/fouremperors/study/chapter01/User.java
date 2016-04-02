@@ -13,5 +13,20 @@ public class User {
         this.name = name;
     }
 
-    private String name;
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
+    public User(Integer age) {
+        this.age  = age;
+    }
+    public User() {
+    }
+    private String name ="default";
+
+    private Integer age = 0;
 }

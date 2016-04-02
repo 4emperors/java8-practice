@@ -1,9 +1,12 @@
 package com.fouremperors.study.chapter01;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.function.IntToDoubleFunction;
 import java.util.function.IntToLongFunction;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -31,6 +34,7 @@ public class Lambda01 {
         };
 
         String[] names=new String[]{"KeithFu","ZenYou","123456789","Pumpkin"};
+        Integer[] ages=new Integer[]{45,23,18,67};
 
         //排序
         Arrays.sort(names,stringComparator);
@@ -44,6 +48,20 @@ public class Lambda01 {
         Stream<String> silence = Stream.empty();
 
         new Programmer().name();
+
+        //根据字符数组构造User对象
+        Stream<User> userStream = Arrays.asList(names).stream().map(User::new);
+        //转换为list
+        List<User> users = userStream.collect(Collectors.toList());
+        //l输出打印一下
+        users.stream().forEach(System.out::println);
+        //根据年龄构造函数函数并打印输出
+        Arrays.asList(ages).stream().map(User::new).forEach(System.out::println);
+
+        Object[] objects = Arrays.asList(ages).stream().toArray();
+
+        //有没有霸气侧露
+        User[] userArray = Arrays.asList(ages).stream().toArray(User [] ::new);
 
     }
 
