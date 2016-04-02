@@ -13,6 +13,11 @@ public class User {
         this.name = name;
     }
 
+    public User(String name,Integer age) {
+        this.name = name;
+        this.age=age;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -27,6 +32,10 @@ public class User {
     public User() {
     }
     private String name ="default";
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 
     private Integer age = 0;
 }
