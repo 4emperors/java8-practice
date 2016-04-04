@@ -2,6 +2,7 @@ package com.fouremperors.study.chapter02;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -28,7 +29,14 @@ public class Optional01 {
         //以下面的例子来讲,会有三种可能情况,Optional中的tre或false及 .或者是一个空的可选值.
         Optional<Boolean> aBoolean = max.map(results::add);
 
+        //如果max无值时,则为空字符串
+        String s = max.orElse("");
+        //或者采用代码来计算
+        Object o = Stream.empty().findAny().orElseGet(() -> "empty");
 
+        //会打印empty
+        System.out.println(o);
 
+        Stream.empty().findAny().orElseThrow(NoSuchElementException::new);
     }
 }
