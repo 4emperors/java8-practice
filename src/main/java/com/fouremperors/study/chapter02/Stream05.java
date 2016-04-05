@@ -25,6 +25,8 @@ public class Stream05 {
         //你可以将一个原型流转成对象流
         Stream<Integer> boxed = intStream.boxed();
 
+        boxed.parallel().unordered().limit(2);
+
     }
 
 
