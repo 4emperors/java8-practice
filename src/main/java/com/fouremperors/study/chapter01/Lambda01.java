@@ -1,10 +1,10 @@
 package com.fouremperors.study.chapter01;
 
-import java.util.ArrayList;
+import com.fouremperors.study.User;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.IntToDoubleFunction;
 import java.util.function.IntToLongFunction;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

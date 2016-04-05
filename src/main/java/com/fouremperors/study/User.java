@@ -1,4 +1,4 @@
-package com.fouremperors.study.chapter01;
+package com.fouremperors.study;
 
 /**
  * Created by qianfanyanfa on 16/4/2.
@@ -35,6 +35,10 @@ public class User {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Integer getAge() {
+        return age;
     }
 
     private Integer age = 0;
